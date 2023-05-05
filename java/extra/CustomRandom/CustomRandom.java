@@ -7,7 +7,7 @@ public class CustomRandom{
    private static CustomRandom instance;
 
    private CustomRandom(){
-      random = new Random();
+      random = new Random(System.currentTimeMillis());
    }
 
    public static CustomRandom getInstance(){
