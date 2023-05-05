@@ -21,3 +21,24 @@ utilsDownload(){
    mv ./random-utilities/$1/extra ./extra
    sudo rm -dr ./random-utilities
 }
+
+figlet-call(){
+	OUTPUT=$(figlet -f slant -w 120 $1 | toilet -f term --gay -w 120)
+	echo $OUTPUT | pv -l -q -L 5
+	echo
+}
+
+gitTester(){
+	ssh -T git@github.com
+}
+
+cleaner(){
+	echo "Cleaning up after the mess you've done..."
+	find . -name \*.aux -type f -delete
+	find . -name \*.fls -type f -delete
+	find . -name \*.log -type f -delete
+	find . -name \*.out -type f -delete
+	find . -name \*.toc -type f -delete
+	find . -name \*.synctex -type f -delete
+	find . -name \*.fdb_latexmk -type f -delete
+}
