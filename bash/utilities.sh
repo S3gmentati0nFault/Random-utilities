@@ -42,3 +42,15 @@ cleaner(){
 	find . -name \*.synctex -type f -delete
 	find . -name \*.fdb_latexmk -type f -delete
 }
+
+gitadd(){
+		if test -n " $(find . -name \*.tex -type f) ";
+		then
+				cleaner
+		fi
+		COMMIT_TEXT=$1
+		git status
+		git add *
+		git commit -m $COMMIT_TEXT
+		git push
+}
