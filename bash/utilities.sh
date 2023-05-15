@@ -1,4 +1,4 @@
-# !/bin/bash
+# !bin/bash
 
 mqttStartup(){
    /usr/local/opt/mosquitto/sbin/mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
@@ -20,6 +20,20 @@ utilsDownload(){
    sudo rm -dr ./random-utilities/.git
    mv ./random-utilities/$1/extra ./extra
    sudo rm -dr ./random-utilities
+}
+
+pullAll(){
+		ls -a
+		setopt CSH_NULL_GLOB
+		ARRAY=(*)
+
+		for DIR in "${ARRAY[@]}" 
+		do
+				echo "\n\nPulling directory $DIR"
+				cd $DIR
+				git pull
+				..
+		done
 }
 
 figlet-call(){
