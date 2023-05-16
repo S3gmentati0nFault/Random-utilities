@@ -16,7 +16,7 @@ utilsDownload(){
    fi
 
    cd ./src/main/java/
-   git clone git@github.com:S3gmentati0nFault/random-utilities.git
+   git clone gh:S3gmentati0nFault/random-utilities.git
    sudo rm -dr ./random-utilities/.git
    mv ./random-utilities/$1/extra ./extra
    sudo rm -dr ./random-utilities
@@ -43,7 +43,7 @@ figlet-call(){
 }
 
 gitTester(){
-	ssh -T git@github.com
+	ssh -T gh
 }
 
 cleaner(){
