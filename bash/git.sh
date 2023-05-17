@@ -1,3 +1,5 @@
+source ./utilities.sh
+
 git-add(){
 		if test -n " $(find . -name \*.tex -type f) ";
 		then
