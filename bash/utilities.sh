@@ -1,16 +1,16 @@
 # !bin/bash
 
-mqttStartup(){
+mqtt-startup(){
    /usr/local/opt/mosquitto/sbin/mosquitto -c /usr/local/etc/mosquitto/mosquitto.conf
 }
 
-javaCompile(){
+java-compile(){
    javac $1.java
    java $1
    rm $1.class
 }
 
-utilsDownload(){
+utils-download(){
    if [ -d "./src/main/java/extra" ]; then
       rm -dr ./src/main/java/extra
    fi
@@ -37,4 +37,10 @@ cleaner(){
 	find . -name \*.toc -type f -delete
 	find . -name \*.synctex -type f -delete
 	find . -name \*.fdb_latexmk -type f -delete
+}
+
+# SSH startup
+function ssh-startup(){
+	sudo systemctl start sshd
+	sudo systemctl status sshd
 }
