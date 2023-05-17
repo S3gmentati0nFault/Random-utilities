@@ -22,28 +22,10 @@ utilsDownload(){
    sudo rm -dr ./random-utilities
 }
 
-pullAll(){
-		ls -a
-		setopt CSH_NULL_GLOB
-		ARRAY=(*)
-
-		for DIR in "${ARRAY[@]}" 
-		do
-				echo "\n\nPulling directory $DIR"
-				cd $DIR
-				git pull
-				..
-		done
-}
-
 figlet-call(){
 	OUTPUT=$(figlet -f slant -w 120 $1 | toilet -f term --gay -w 120)
 	echo $OUTPUT | pv -l -q -L 5
 	echo
-}
-
-gitTester(){
-	ssh -T gh
 }
 
 cleaner(){
@@ -55,16 +37,4 @@ cleaner(){
 	find . -name \*.toc -type f -delete
 	find . -name \*.synctex -type f -delete
 	find . -name \*.fdb_latexmk -type f -delete
-}
-
-gitadd(){
-		if test -n " $(find . -name \*.tex -type f) ";
-		then
-				cleaner
-		fi
-		COMMIT_TEXT=$1
-		git status
-		git add *
-		git commit -m $COMMIT_TEXT
-		git push
 }
