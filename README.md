@@ -32,12 +32,12 @@ The easiest way is to use a config system, the fastest solution is the following
 2. Go in the .ssh folder and create a new file called config
 3. Modify the config file as follows:
 ```
-Host hostname #you can invent this one
+Host hostname #you can invent this one# github.com
   User git
   Hostname github.com
   IdentityFile .ssh/#name of your public key#
 ```
-4. Modify my code in the folder `random-utilities/bash/utilities.sh`, every time that git servers are polled using `gh:...` change it with the hostname you used at the previous step.
+4. Modify my code in the folder `random-utilities/bash/utilities.sh`, every time that git servers are polled you can either use `hostname:...` or `git@github.com:...`.
 
 Creating such file will allow you to access github by doing the following (as an example)
 ```
