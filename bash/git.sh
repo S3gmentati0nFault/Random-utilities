@@ -17,6 +17,7 @@ git-test(){
 }
 
 pull-all(){
+		cd ~/Projects
 		ls -a
 		setopt CSH_NULL_GLOB
 		ARRAY=(*)
