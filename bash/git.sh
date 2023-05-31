@@ -1,4 +1,4 @@
-source $HOME/Projects/random-utilities/bash/utilities.sh
+source $HOME/Projects/Random-utilities/bash/utilities.sh
 
 git-add(){
 		if test -n " $(find . -name \*.tex -type f) ";

@@ -16,10 +16,10 @@ utils-download(){
    fi
 
    cd ./src/main/java/
-   git clone gh:S3gmentati0nFault/random-utilities.git
-   sudo rm -dr ./random-utilities/.git
-   mv ./random-utilities/$1/extra ./extra
-   sudo rm -dr ./random-utilities
+   git clone gh:S3gmentati0nFault/Random-utilities.git
+   sudo rm -dr ./Random-utilities/.git
+   mv ./Random-utilities/$1/extra ./extra
+   sudo rm -dr ./Random-utilities
 }
 
 figlet-call(){
